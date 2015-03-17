@@ -1,0 +1,19 @@
+{
+  "name": "xiv-tools",
+  "version": "0.0.1",
+  "description": "Simple tools for FinalFantasy XIV",
+  "main": "sample/main.js",
+  "author": "Matsuokande",
+  "license": "MIT",
+  "scripts": {
+    "sample": "watchify -e sample/main.js -t partialify -o build/sample.js"
+  },
+  "devDependencies": {
+    "insert-css": "^0.2.0",
+    "partialify": "^3.1.1",
+    "watchify": "^1.0.6"
+  },
+  "dependencies": {
+    "vue": "git://github.com/yyx990803/vue#next"
+  }
+}
