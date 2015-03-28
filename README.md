@@ -4,7 +4,7 @@ FFXIV向けのツールとかなんとか
 
 ```
 npm install
-npm run sample
+gulp watch
 ```
 
 ## LISENCE
