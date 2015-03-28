@@ -11,7 +11,11 @@
   "devDependencies": {
     "insert-css": "^0.2.0",
     "partialify": "^3.1.1",
-    "watchify": "^1.0.6"
+    "watchify": "^1.0.6",
+    "gulp": "~3.8.11",
+    "gulp-util": "~3.0.4",
+    "browserify": "~9.0.3",
+    "vinyl-source-stream": "~1.1.0"
   },
   "dependencies": {
     "vue": "git://github.com/yyx990803/vue#next"
