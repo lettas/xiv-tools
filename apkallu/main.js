@@ -4,6 +4,7 @@ var main = new Vue({
   components: {
     header: require('./header'),
     dataTable: require('./data-table'),
+    footer: require('./footer'),
   }
 });
 

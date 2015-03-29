@@ -5,11 +5,12 @@ var main = new Vue({
   components: {
     header: require('./header'),
     dataTable: require('./data-table'),
+    footer: require('./footer'),
   }
 });
 
 
-},{"./data-table":2,"./header":6,"./style.css":9,"insert-css":10}],2:[function(require,module,exports){
+},{"./data-table":2,"./footer":6,"./header":9,"./style.css":12,"insert-css":13}],2:[function(require,module,exports){
 require('insert-css')(require('./style.css'))
 module.exports = {
   template: require('./template.html'),
@@ -85,7 +86,7 @@ module.exports = {
 }
 
 
-},{"../data/sightseeing.js":5,"./style.css":3,"./template.html":4,"insert-css":10}],3:[function(require,module,exports){
+},{"../data/sightseeing.js":5,"./style.css":3,"./template.html":4,"insert-css":13}],3:[function(require,module,exports){
 module.exports = '#list {\n  width: 100%;\n  font-size: x-small;\n}\n\n.extention-control {\n  font-size: x-small;\n  vertical-align: middle;\n  text-align: right;\n  margin: 2px 0;\n}\n\n.extention-control > label {\n  padding-left: 2px;\n}\n\n#list .list-body {\n  width: 100%;\n  border-style: solid;\n  border-color: #8E8E8E;\n  border-width: 0 1px 1px 0;\n  overflow: hidden;\n}\n\n#list .list-header {\n  background-color: #00496E;\n  color: #FFFFFF;\n  font-weight: 500;\n}\n\n#list .list-completed {\n  background-color: #393939;\n  color: #8E8E8E;\n}\n\n#list .list-uncompleted {\n  background-color: #FFFFFF;\n  color: #1C1C1C;\n  -webkit-transition: background 0.2s ease-in-out;\n  -moz-transition: background 0.2s ease-in-out;\n  -ms-transition: background 0.2s ease-in-out;\n  -o-transition: background 0.2s ease-in-out;\n}\n\n#list .list-uncompleted:hover {\n  background-color: #FCEDAA;\n  color: #1C1C1C;\n  -webkit-transition: background 0.2s ease-in-out;\n  -moz-transition: background 0.2s ease-in-out;\n  -ms-transition: background 0.2s ease-in-out;\n  -o-transition: background 0.2s ease-in-out;\n}\n\n#list .list-row {\n  width: 100%;\n  margin: 0;\n  padding: 0;\n  text-align: left;\n  vertical-align: middle;\n  border-style: solid;\n  border-color: #8E8E8E;\n  border-width: 1px 0 0 1px;\n}\n\n#list .list-entry {\n  padding: 4px;\n}\n\n#list .list-entry > input {\n  vertical-align: middle;\n}\n\n#list .list-entry > label {\n  padding-left: 2px;\n  vertical-align: middle;\n}\n';
 },{}],4:[function(require,module,exports){
 module.exports = '<div id="list">\n  <div class="extention-control">\n    <input id="extention-shows" type="checkbox" v-model="userdata.extention.shows" /><label for="extention-shows">No.20以降を表示する</label>\n  </div>\n  <div class="list-body">\n    <div class="list-row list-header pure-g">\n      <div class="list-entry list-entry-no pure-u-1-24">No</div>\n      <div class="list-entry list-entry-name pure-u-4-24">タイトル</div>\n      <div class="list-entry list-entry-comment pure-u-5-24"><input id="visible-comment" type="checkbox" v-model="userdata.visible.comment" /><label for="visible-comment">コメント</label></div>\n      <div class="list-entry list-entry-zone pure-u-4-24"><input id="visible-zone" type="checkbox" v-model="userdata.visible.zone" /><label for="visible-zone">エリア</label></div>\n      <div class="list-entry list-entry-coord pure-u-2-24"><input id="visible-coord" type="checkbox" v-model="userdata.visible.coord" /><label for="visible-coord">座標</label></div>\n      <div class="list-entry list-entry-time pure-u-2-24"><input id="visible-time" type="checkbox" v-model="userdata.visible.time" /><label for="visible-time">時間帯</label></div>\n      <div class="list-entry list-entry-time pure-u-2-24"><input id="visible-weather" type="checkbox" v-model="userdata.visible.weather" /><label for="visible-weather">天候</label></div>\n      <div class="list-entry list-entry-emote pure-u-2-24"><input id="visible-emote" type="checkbox" v-model="userdata.visible.emote" /><label for="visible-emote">エモート</label></div>\n    </div>\n    <div class="list-row pure-g {{userdata.completed[entry.no] ? \'list-completed\' : \'list-uncompleted\'}}" v-repeat="entry: data | limitation" v-on="click: toggleCompleted(entry)">\n      <div class="list-entry list-entry-no pure-u-1-24">{{entry.no}}</div>\n      <div class="list-entry list-entry-name pure-u-4-24">{{entry.name}}</div>\n      <div class="list-entry list-entry-comment pure-u-5-24"><span v-if="!userdata.visible.comment">***</span><span v-if="userdata.visible.comment">{{entry.comment}}</span></div>\n      <div class="list-entry list-entry-zone pure-u-4-24"><span v-if="!userdata.visible.zone">***</span><span v-if="userdata.visible.zone">{{entry.zone}}</span></div>\n      <div class="list-entry list-entry-coord pure-u-2-24"><span v-if="!userdata.visible.coord">***</span><span v-if="userdata.visible.coord">X{{entry.coordX}},Y{{entry.coordY}}</span></div>\n      <div class="list-entry list-entry-time pure-u-2-24"><span v-if="!userdata.visible.time">***</span><span v-if="userdata.visible.time">{{entry.openedAt}}-{{entry.closedAt}}</span></div>\n      <div class="list-entry list-entry-time pure-u-2-24"><span v-if="!userdata.visible.weather">***</span><span v-if="userdata.visible.weather">{{entry.weather}}</span></div>\n      <div class="list-entry list-entry-emote pure-u-2-24"><span v-if="!userdata.visible.emote">***</span><span v-if="userdata.visible.emote">{{entry.emote}}</span></div>\n    </div>\n  </div>\n</div>\n';
@@ -99,15 +100,19 @@ module.exports = {
   replace: true,
 }
 
-
-
-},{"./style.css":7,"./template.html":8,"insert-css":10}],7:[function(require,module,exports){
-module.exports = '';
+},{"./style.css":7,"./template.html":8,"insert-css":13}],7:[function(require,module,exports){
+module.exports = '#footer {\n  width: 100%;\n  height: 50px;\n  bottom: 0;\n}\n\n.copyright {\n  font-size: x-small;\n  color: #8E8E8E;\n  text-align: right;\n}\n';
 },{}],8:[function(require,module,exports){
-module.exports = '<section id="header">\n  <h1>探検手帳(ネタバレ防止機能付き)</h1>\n</section>\n';
+module.exports = '<footer id="footer">\n<div class="copyright">記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。</div>\n<div class="copyright">Copyright (C) 2010 - 2015 SQUARE ENIX CO., LTD. All Rights Reserved.</div>\n</footer>\n';
 },{}],9:[function(require,module,exports){
+arguments[4][6][0].apply(exports,arguments)
+},{"./style.css":10,"./template.html":11,"dup":6,"insert-css":13}],10:[function(require,module,exports){
+module.exports = '';
+},{}],11:[function(require,module,exports){
+module.exports = '<section id="header">\n  <h1>探検手帳(ネタバレ防止機能付き)</h1>\n</section>\n';
+},{}],12:[function(require,module,exports){
 module.exports = '#main {\n  width: 820px;\n  margin: 0 auto;\n}\n';
-},{}],10:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 var inserted = {};
 
 module.exports = function (css, options) {
