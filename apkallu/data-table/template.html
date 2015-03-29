@@ -13,7 +13,7 @@
       <div class="list-entry list-entry-time pure-u-2-24"><input id="visible-weather" type="checkbox" v-model="userdata.visible.weather" /><label for="visible-weather">天候</label></div>
       <div class="list-entry list-entry-emote pure-u-2-24"><input id="visible-emote" type="checkbox" v-model="userdata.visible.emote" /><label for="visible-emote">エモート</label></div>
     </div>
-    <div class="list-row pure-g {{entry.isCompleted ? 'list-completed' : 'list-uncompleted'}}" v-repeat="entry: data | limitation">
+    <div class="list-row pure-g {{userdata.completed[entry.no] ? 'list-completed' : 'list-uncompleted'}}" v-repeat="entry: data | limitation" v-on="click: toggleCompleted(entry)">
       <div class="list-entry list-entry-no pure-u-1-24">{{entry.no}}</div>
       <div class="list-entry list-entry-name pure-u-4-24">{{entry.name}}</div>
       <div class="list-entry list-entry-comment pure-u-5-24"><span v-if="!userdata.visible.comment">***</span><span v-if="userdata.visible.comment">{{entry.comment}}</span></div>
