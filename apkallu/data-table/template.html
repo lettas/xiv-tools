@@ -1,4 +1,13 @@
 <div id="list">
+  <div class="list-row list-header pure-g">
+    <div class="list-entry list-entry-no pure-u-1-24">No</div>
+    <div class="list-entry list-entry-name pure-u-4-24">タイトル</div>
+    <div class="list-entry list-entry-zone pure-u-6-24">エリア</div>
+    <div class="list-entry list-entry-coordinate pure-u-2-24">座標</div>
+    <div class="list-entry list-entry-time pure-u-3-24">時間帯</div>
+    <div class="list-entry list-entry-emote pure-u-2-24">エモート</div>
+    <div class="list-entry list-entry-comment pure-u">備考</div>
+  </div>
   <div class="list-row pure-g" v-repeat="entry: data | orderBy sortKey reversed[sortKey]">
     <div class="list-entry list-entry-no pure-u-1-24">{{entry.no}}</div>
     <div class="list-entry list-entry-name pure-u-4-24">{{entry.name}}</div>

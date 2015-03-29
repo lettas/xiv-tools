@@ -7,6 +7,12 @@
   border-width: 0px 1px 1px 0px;
 }
 
+#list .list-header {
+  background-color: #00496E;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
 #list .list-row {
   width: 100%;
   margin: 0px;
