@@ -1,0 +1,23 @@
+#list {
+  width: 640px;
+  font-size: x-small;
+  margin: 2px;
+  border-style: solid;
+  border-color: #8E8E8E;
+  border-width: 0px 1px 1px 0px;
+}
+
+#list .list-row {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+  vertical-align: middle;
+  border-style: solid;
+  border-color: #8E8E8E;
+  border-width: 1px 0px 0px 1px;
+}
+
+#list .list-entry {
+  padding: 4px;
+}

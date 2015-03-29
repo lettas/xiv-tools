@@ -1,21 +1,11 @@
-<table>
-  <thead>
-    <tr>
-      <th v-repeat="key: columns" v-on="click: sortBy(key)" v-class="active: sortKey == key">
-        {{columnName[key]}}
-        <span class="arrow" v-class="reversed[key] ? 'dsc' : 'asc'">
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-repeat="entry: data | orderBy sortKey reversed[sortKey]">
-      <td>{{entry.no}}</td>
-      <td>{{entry.name}}</td>
-      <td>{{entry.zone}}({{entry.coordX}},{{entry.coordY}})</td>
-      <td>{{entry.openedAt}}-{{entry.closedAt}}</td>
-      <td>{{entry.weather}}</td>
-      <td>{{entry.emote}}</td>
-      <td>{{entry.comment}}</td>
-    </tr>
-  </tbody>
-</table>
+<div id="list">
+  <div class="list-row pure-g" v-repeat="entry: data | orderBy sortKey reversed[sortKey]">
+    <div class="list-entry list-entry-no pure-u-1-24">{{entry.no}}</div>
+    <div class="list-entry list-entry-name pure-u-4-24">{{entry.name}}</div>
+    <div class="list-entry list-entry-zone pure-u-6-24">{{entry.zone}}</div>
+    <div class="list-entry list-entry-coordinate pure-u-2-24">X{{entry.coordX}},Y{{entry.coordY}}</div>
+    <div class="list-entry list-entry-time pure-u-3-24">{{entry.openedAt}}-{{entry.closedAt}}</div>
+    <div class="list-entry list-entry-emote pure-u-2-24">{{entry.emote}}</div>
+    <div class="list-entry list-entry-comment pure-u">{{entry.comment}}</div>
+  </div>
+</div>
