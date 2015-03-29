@@ -9,7 +9,7 @@
     <div class="list-entry list-entry-emote pure-u-2-24"><input id="visible-emote" type="checkbox" v-model="visible.emote" /><label for="visible-emote">エモート</label></div>
     <div class="list-entry list-entry-comment pure-u-5-24"><input id="visible-comment" type="checkbox" v-model="visible.comment" /><label for="visible-comment">備考</label></div>
   </div>
-  <div class="list-row pure-g {{entry.isCompleted ? 'list-completed' : 'list-uncompleted'}}" v-repeat="entry: data"">
+  <div class="list-row pure-g {{entry.isCompleted ? 'list-completed' : 'list-uncompleted'}}" v-repeat="entry: data | numberFilter 20">
     <div class="list-entry list-entry-no pure-u-1-24">{{entry.no}}</div>
     <div class="list-entry list-entry-name pure-u-4-24">{{entry.name}}</div>
     <div class="list-entry list-entry-zone pure-u-4-24"><span v-if="!visible.zone">***</span><span v-if="visible.zone">{{entry.zone}}</span></div>

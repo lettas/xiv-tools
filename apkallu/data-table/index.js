@@ -6,7 +6,10 @@ module.exports = {
   compiled: function() {
   },
 
-  methods: {
+  filters: {
+    numberFilter: function(rows, n) {
+      return rows.filter(function(row) { return row.no <= (n - 0) });
+    }
   },
 
   data: function() {
