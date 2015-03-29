@@ -9,7 +9,7 @@
     <div class="list-entry list-entry-emote pure-u-2-24">エモート</div>
     <div class="list-entry list-entry-comment pure-u">備考</div>
   </div>
-  <div class="list-row pure-g" v-repeat="entry: data">
+  <div class="list-row pure-g" v-repeat="entry: data" v-class="list-completed: entry.no == 2">
     <div class="list-entry list-entry-no pure-u-1-24">{{entry.no}}</div>
     <div class="list-entry list-entry-name pure-u-4-24">{{entry.name}}</div>
     <div class="list-entry list-entry-zone pure-u-5-24">{{entry.zone}}</div>
