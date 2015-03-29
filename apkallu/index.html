@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta http-equiv="content-script-Type" content="text/javascript" />
+<meta name="Description" content="FINAL FANTASY XIV 新生エオルゼアの探検手帳を攻略するためのツールです。ネタバレを防ぎつつ、時間や天気など自分で探すのが面倒なところは表示することができます。" />
+<meta name="Keywords" content="探検手帳,FF14,FFXIV,新生エオルゼア" />
+<title>FFXIV Tools - 探検手帳手帳</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+</head>
+<body id="main">
+
+<section id="header">
+  <h1>FFXIV 探検手帳手帳</h1>
+  <div class="description">FINAL FANTASY XIV 新生エオルゼアの探検手帳を攻略するためのツールです。</div>
+  <div class="description">ネタバレを防ぎつつ、時間や天気など自分で探すのが面倒なところは表示することができます。</div>
+  <div class="description">既に発見済みの行をクリックすることで進捗の管理をすることもできます。</div>
+</section>
+
+<div v-component="dataTable"></div>
+
+<div id="update">
+  <h2>更新情報</h2>
+  <dl class="history">
+    <dt>2015/03/30</dt>
+    <dd>チェックリストとしての最低限作成。</dd>
+  </dl>
+</div>
+
+<footer id="footer">
+<div class="copyright">記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。</div>
+<div class="copyright">Copyright (C) 2010 - 2015 SQUARE ENIX CO., LTD. All Rights Reserved.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
+<script src="../build/apkallu.js"></script>
+</body>
+</html>

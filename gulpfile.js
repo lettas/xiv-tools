@@ -4,7 +4,7 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 
-var target = 'sample';
+var target = 'apkallu';
 
 function targetFilePath(target) {
   return './' + target + '/main.js';

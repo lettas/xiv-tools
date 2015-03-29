@@ -1,0 +1,27 @@
+<div id="list">
+  <div class="extention-control">
+    <input id="extention-shows" type="checkbox" v-model="userdata.extention.shows" /><label for="extention-shows">No.20以降を表示する</label>
+  </div>
+  <div class="list-body">
+    <div class="list-row list-header pure-g">
+      <div class="list-entry list-entry-no pure-u-1-24">No</div>
+      <div class="list-entry list-entry-name pure-u-4-24">タイトル</div>
+      <div class="list-entry list-entry-comment pure-u-5-24"><input id="visible-comment" type="checkbox" v-model="userdata.visible.comment" /><label for="visible-comment">コメント</label></div>
+      <div class="list-entry list-entry-zone pure-u-4-24"><input id="visible-zone" type="checkbox" v-model="userdata.visible.zone" /><label for="visible-zone">エリア</label></div>
+      <div class="list-entry list-entry-coord pure-u-2-24"><input id="visible-coord" type="checkbox" v-model="userdata.visible.coord" /><label for="visible-coord">座標</label></div>
+      <div class="list-entry list-entry-time pure-u-2-24"><input id="visible-time" type="checkbox" v-model="userdata.visible.time" /><label for="visible-time">時間帯</label></div>
+      <div class="list-entry list-entry-time pure-u-2-24"><input id="visible-weather" type="checkbox" v-model="userdata.visible.weather" /><label for="visible-weather">天候</label></div>
+      <div class="list-entry list-entry-emote pure-u-2-24"><input id="visible-emote" type="checkbox" v-model="userdata.visible.emote" /><label for="visible-emote">エモート</label></div>
+    </div>
+    <div class="list-row pure-g {{userdata.completed[entry.no] ? 'list-completed' : 'list-uncompleted'}}" v-repeat="entry: data | limitation" v-on="click: toggleCompleted(entry)">
+      <div class="list-entry list-entry-no pure-u-1-24">{{entry.no}}</div>
+      <div class="list-entry list-entry-name pure-u-4-24">{{entry.name}}</div>
+      <div class="list-entry list-entry-comment pure-u-5-24"><span v-if="!userdata.visible.comment">***</span><span v-if="userdata.visible.comment">{{entry.comment}}</span></div>
+      <div class="list-entry list-entry-zone pure-u-4-24"><span v-if="!userdata.visible.zone">***</span><span v-if="userdata.visible.zone">{{entry.zone}}</span></div>
+      <div class="list-entry list-entry-coord pure-u-2-24"><span v-if="!userdata.visible.coord">***</span><span v-if="userdata.visible.coord">X{{entry.coordX}},Y{{entry.coordY}}</span></div>
+      <div class="list-entry list-entry-time pure-u-2-24"><span v-if="!userdata.visible.time">***</span><span v-if="userdata.visible.time">{{entry.openedAt}}-{{entry.closedAt}}</span></div>
+      <div class="list-entry list-entry-time pure-u-2-24"><span v-if="!userdata.visible.weather">***</span><span v-if="userdata.visible.weather">{{entry.weather}}</span></div>
+      <div class="list-entry list-entry-emote pure-u-2-24"><span v-if="!userdata.visible.emote">***</span><span v-if="userdata.visible.emote">{{entry.emote}}</span></div>
+    </div>
+  </div>
+</div>
