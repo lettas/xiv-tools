@@ -107,9 +107,9 @@ module.exports = '<footer id="footer">\n<div class="copyright">記載されて�
 },{}],9:[function(require,module,exports){
 arguments[4][6][0].apply(exports,arguments)
 },{"./style.css":10,"./template.html":11,"dup":6,"insert-css":13}],10:[function(require,module,exports){
-module.exports = '';
+module.exports = '.description {\n  font-size: small;\n  color: #8E8E8E;\n  text-align: left;\n}\n\n';
 },{}],11:[function(require,module,exports){
-module.exports = '<section id="header">\n  <h1>探検手帳(ネタバレ防止機能付き)</h1>\n</section>\n';
+module.exports = '<section id="header">\n  <h1>FFXIV 探検手帳手帳</h1>\n  <div class="description">FINAL FANTASY XIV 新生エオルゼアの探検手帳を攻略するためのツールです。</div>\n  <div class="description">ネタバレを防ぎつつ、時間や天気など自分で探すのが面倒なところは表示することができます。</div>\n  <div class="description">既に発見済みの行をクリックすることで進捗の管理をすることもできます。</div>\n</section>\n';
 },{}],12:[function(require,module,exports){
 module.exports = '#main {\n  width: 820px;\n  margin: 0 auto;\n}\n';
 },{}],13:[function(require,module,exports){
