@@ -2,21 +2,21 @@
   <div class="list-row list-header pure-g">
     <div class="list-entry list-entry-no pure-u-1-24">No</div>
     <div class="list-entry list-entry-name pure-u-4-24">タイトル</div>
-    <div class="list-entry list-entry-zone pure-u-5-24">エリア</div>
-    <div class="list-entry list-entry-coordinate pure-u-2-24">座標</div>
-    <div class="list-entry list-entry-time pure-u-2-24">時間帯</div>
-    <div class="list-entry list-entry-time pure-u-1-24">天候</div>
-    <div class="list-entry list-entry-emote pure-u-2-24">エモート</div>
-    <div class="list-entry list-entry-comment pure-u">備考</div>
+    <div class="list-entry list-entry-zone pure-u-5-24"><input id="visible-zone" type="checkbox" v-model="visible.zone" /><label for="visible-zone">エリア</label></div>
+    <div class="list-entry list-entry-coordinate pure-u-2-24"><input id="visible-coordinate" type="checkbox" v-model="visible.coordinate" /><label for="visible-coordinate">座標</label></div>
+    <div class="list-entry list-entry-time pure-u-2-24"><input id="visible-time" type="checkbox" v-model="visible.time" /><label for="visible-time">時間帯</label></div>
+    <div class="list-entry list-entry-time pure-u-2-24"><input id="visible-weather" type="checkbox" v-model="visible.weather" /><label for="visible-weather">天候</label></div>
+    <div class="list-entry list-entry-emote pure-u-2-24"><input id="visible-emote" type="checkbox" v-model="visible.emote" /><label for="visible-emote">エモート</label></div>
+    <div class="list-entry list-entry-comment pure-u"><input id="visible-comment" type="checkbox" v-model="visible.comment" /><label for="visible-comment">備考</label></div>
   </div>
   <div class="list-row pure-g" v-repeat="entry: data" v-class="list-completed: entry.no == 2">
     <div class="list-entry list-entry-no pure-u-1-24">{{entry.no}}</div>
     <div class="list-entry list-entry-name pure-u-4-24">{{entry.name}}</div>
-    <div class="list-entry list-entry-zone pure-u-5-24"><span v-if="mask.zone">***</span><span v-if="!mask.zone">{{entry.zone}}</span></div>
-    <div class="list-entry list-entry-coordinate pure-u-2-24"><span v-if="mask.coordinate">***</span><span v-if="!mask.coordinate">X{{entry.coordX}},Y{{entry.coordY}}</span></div>
-    <div class="list-entry list-entry-time pure-u-2-24"><span v-if="mask.time">***</span><span v-if="!mask.time">{{entry.openedAt}}-{{entry.closedAt}}</span></div>
-    <div class="list-entry list-entry-time pure-u-1-24"><span v-if="mask.weather">***</span><span v-if="!mask.weather">{{entry.weather}}</span></div>
-    <div class="list-entry list-entry-emote pure-u-2-24"><span v-if="mask.emote">***</span><span v-if="!mask.emote">{{entry.emote}}</span></div>
-    <div class="list-entry list-entry-comment pure-u"><span v-if="mask.comment">***</span><span v-if="!mask.comment">{{entry.comment}}</span></div>
+    <div class="list-entry list-entry-zone pure-u-5-24"><span v-if="!visible.zone">***</span><span v-if="visible.zone">{{entry.zone}}</span></div>
+    <div class="list-entry list-entry-coordinate pure-u-2-24"><span v-if="!visible.coordinate">***</span><span v-if="visible.coordinate">X{{entry.coordX}},Y{{entry.coordY}}</span></div>
+    <div class="list-entry list-entry-time pure-u-2-24"><span v-if="!visible.time">***</span><span v-if="visible.time">{{entry.openedAt}}-{{entry.closedAt}}</span></div>
+    <div class="list-entry list-entry-time pure-u-2-24"><span v-if="!visible.weather">***</span><span v-if="visible.weather">{{entry.weather}}</span></div>
+    <div class="list-entry list-entry-emote pure-u-2-24"><span v-if="!visible.emote">***</span><span v-if="visible.emote">{{entry.emote}}</span></div>
+    <div class="list-entry list-entry-comment pure-u"><span v-if="!visible.comment">***</span><span v-if="visible.comment">{{entry.comment}}</span></div>
   </div>
 </div>

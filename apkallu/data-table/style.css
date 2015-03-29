@@ -32,3 +32,11 @@
 #list .list-entry {
   padding: 4px;
 }
+
+#list .list-entry > input {
+  vertical-align: middle;
+}
+
+#list .list-entry > label {
+  padding-left: 2px;
+}

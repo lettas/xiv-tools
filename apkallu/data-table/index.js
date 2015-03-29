@@ -11,7 +11,7 @@ module.exports = {
 
   data: function() {
     return {
-      mask: { zone: true, coordinate: true, time: true, weather: true, emote: true, comment: true },
+      visible: { zone: false, coordinate: false, time: false, weather: false, emote: false, comment: false },
       data: require('../data/sightseeing.js')
     };
   }
