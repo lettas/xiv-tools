@@ -4,7 +4,7 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var watchify = require('watchify');
 
-var target = 'apkallu';
+var target = 'cactpot';
 
 function targetFilePath(target) {
   return './' + target + '/main.js';

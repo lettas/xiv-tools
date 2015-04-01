@@ -8,14 +8,17 @@
 <title>FFXIV Tools - 探検手帳手帳</title>
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
-<body id="main">
+<body>
 
 <section id="header">
   <h1>FFXIV ミニくじテンダー</h1>
   <div class="description">FINAL FANTASY XIV 新生エオルゼアのミニくじテンダーで遊ぼう。</div>
 </section>
 
-<div v-component="cactpot"></div>
+<section id="main">
+<div v-component="scratchTicket"></div>
+<div v-component="payoutTable"></div>
+</section>
 
 <div id="update">
   <h2>更新情報</h2>
