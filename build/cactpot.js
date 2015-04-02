@@ -52,7 +52,7 @@ module.exports = '<div id="payouts">\n  <div class="list-body">\n    <div class=
 },{}],6:[function(require,module,exports){
 
 },{}],7:[function(require,module,exports){
-module.exports = '#main {\n  width: 820px;\n  margin: 0 auto;\n}\n\n.description {\n  font-size: small;\n  color: #8E8E8E;\n  text-align: left;\n}\n\n#update {\n  width: 100%;\n  margin-top: 20px;\n  padding: 0;\n}\n\n#update h2 {\n  font-size: medium;\n  margin: 2px 0;\n}\n\n.history {\n  font-size: small;\n}\n\n#footer {\n  width: 100%;\n  height: 50px;\n  bottom: 0;\n}\n\n.copyright {\n  font-size: x-small;\n  color: #8E8E8E;\n  text-align: right;\n}\n';
+module.exports = '#main {\n  width: 80%;\n  margin: 0 auto;\n}\n\n.description {\n  font-size: small;\n  color: #8E8E8E;\n  text-align: left;\n}\n\n#update {\n  width: 100%;\n  margin-top: 20px;\n  padding: 0;\n}\n\n#update h2 {\n  font-size: medium;\n  margin: 2px 0;\n}\n\n.history {\n  font-size: small;\n}\n\n#footer {\n  width: 100%;\n  height: 50px;\n  bottom: 0;\n}\n\n.copyright {\n  font-size: x-small;\n  color: #8E8E8E;\n  text-align: right;\n}\n';
 },{}],8:[function(require,module,exports){
 var inserted = {};
 
