@@ -3,7 +3,7 @@ var main = new Vue({
   el: '#main',
   components: {
     scratchTicket: require('./scratch-ticket'),
-    payloadTable: require('./payload-table'),
+    payoutTable: require('./payout-table'),
   }
 });
 

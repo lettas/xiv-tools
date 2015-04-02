@@ -1,0 +1,13 @@
+<div id="payouts">
+  <div class="list-body">
+    <div class="list-row list-header pure-g">
+      <div class="list-entry list-entry-no pure-u-1-2">No</div>
+      <div class="list-entry list-entry-name pure-u-1-2">報酬</div>
+    </div>
+    <div class="list-row pure-g" v-repeat="entry: data">
+      <div class="list-entry list-entry-no pure-u-1-2">{{entry.no}}</div>
+      <div class="list-entry list-entry-reward pure-u-1-2">{{entry.reward}}</div>
+    </div>
+  </div>
+</div>
+

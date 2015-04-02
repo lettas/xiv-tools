@@ -1,0 +1,21 @@
+module.exports = [
+  { no:  6, reward: 10000 },
+  { no:  7, reward:    36 },
+  { no:  8, reward:   720 },
+  { no:  8, reward:   360 },
+  { no: 10, reward:    80 },
+  { no: 11, reward:   252 },
+  { no: 12, reward:   108 },
+  { no: 13, reward:    72 },
+  { no: 14, reward:    54 },
+  { no: 15, reward:   180 },
+  { no: 16, reward:    72 },
+  { no: 17, reward:   180 },
+  { no: 18, reward:   119 },
+  { no: 19, reward:    36 },
+  { no: 20, reward:   306 },
+  { no: 21, reward:  1080 },
+  { no: 22, reward:   144 },
+  { no: 23, reward:  1800 },
+  { no: 24, reward:  3600 }
+];
